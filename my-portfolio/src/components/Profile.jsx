@@ -1,76 +1,108 @@
-import { useRef } from "react";
-import Box from "@mui/material/Box";
-import ProfileImg from "../assets/profile.png";
-import Typography from "@mui/material/Typography";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import Button from "@mui/material/Button";
 import { TbDownload } from "react-icons/tb";
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaKaggle, FaTrophy } from "react-icons/fa6";
 import gsap from "gsap";
+import ProfileImg from "../assets/profile.png";
+
+const roles = ["AI Products", "Production AI Systems", "Generative AI Applications", "LLM Solutions"];
+
+const socialLinks = [
+  { href: "https://github.com/RaviikrDS", label: "GitHub", icon: FaGithub },
+  { href: "https://www.linkedin.com/in/raviikrds/", label: "LinkedIn", icon: FaLinkedin },
+  { href: "https://medium.com/@ravikumaarDS", label: "Medium", icon: FaMedium },
+  { href: "https://www.kaggle.com/raviikrds", label: "Kaggle", icon: FaKaggle },
+  { href: "mailto:raviikrds@gmail.com", label: "Email", icon: FaEnvelope },
+];
 
 const Profile = ({ timeline }) => {
   const profileRef = useRef(null);
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setRoleIndex((currentIndex) => (currentIndex + 1) % roles.length);
+    }, 2400);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   useGSAP(
     () => {
-      const profilePic = profileRef.current.querySelector(
-        ".profile-pic-img-box"
-      );
-      const greetingText = profileRef.current.querySelector(
-        ".profile-gretting-text"
-      );
-      const profileGreetindName = profileRef.current.querySelector(
-        ".profile-gretting-name"
-      );
-      const profileGreetindDesc = profileRef.current.querySelector(
-        ".profile-gretting-text-2"
-      );
-      const resumeButtonBox =
-        profileRef.current.querySelector(".resume-btn-box");
-      const resumeIcon = profileRef.current.querySelector(".resume-icon");
+      const profilePic = profileRef.current?.querySelector(".profile-card__image");
+      const badge = profileRef.current?.querySelector(".profile-badge");
+      const greetingText = profileRef.current?.querySelector(".profile-greeting");
+      const profileName = profileRef.current?.querySelector(".profile-name");
+      const roleText = profileRef.current?.querySelector(".profile-role");
+      const description = profileRef.current?.querySelector(".profile-description");
+      const actions = profileRef.current?.querySelector(".profile-actions");
+      const socialLinkItems = profileRef.current?.querySelectorAll(".profile-social-link");
+      const resumeIcon = profileRef.current?.querySelector(".resume-icon");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      // Add animation to the passed timeline
+      if (!profilePic || !badge || !greetingText || !profileName || !roleText || !description || !actions || !resumeIcon) {
+        return;
+      }
+
+      if (prefersReducedMotion) {
+        gsap.set([badge, greetingText, profileName, roleText, description, actions, ...Array.from(socialLinkItems || [])], {
+          opacity: 1,
+          y: 0,
+        });
+        return;
+      }
+
       timeline.from(
         profilePic,
         {
           opacity: 0,
-          duration: 0.5,
-          scale: 0.5,
+          duration: 0.6,
+          scale: 0.95,
+          y: 20,
         },
-        "-=0.3"
+        "-=0.2"
       );
 
-      timeline.from(greetingText, {
-        x: 100,
+      timeline.from([badge, greetingText], {
         opacity: 0,
-        duration: 0.4,
+        y: 16,
+        duration: 0.45,
       });
 
-      timeline.from(profileGreetindName, {
-        x: -100,
+      timeline.from([profileName, roleText], {
         opacity: 0,
-        duration: 0.4,
+        y: 18,
+        duration: 0.55,
       });
 
-      timeline.from(profileGreetindDesc, {
-        x: 100,
+      timeline.from(description, {
         opacity: 0,
-        duration: 0.4,
+        y: 18,
+        duration: 0.5,
       });
 
-      timeline.from(resumeButtonBox, {
+      timeline.from(actions, {
         opacity: 0,
-        duration: 0.4,
+        y: 16,
+        duration: 0.45,
+      });
+
+      timeline.from(Array.from(socialLinkItems || []), {
+        opacity: 0,
+        y: 10,
+        duration: 0.35,
+        stagger: 0.08,
       });
 
       gsap.fromTo(
         resumeIcon,
-        { y: -10 },
+        { y: -4 },
         {
-          y: 10,
-          duration: 0.8,
+          y: 4,
+          duration: 0.9,
           repeat: -1,
           yoyo: true,
-          ease: "power1.inOut", // smoother motion
+          ease: "power1.inOut",
         }
       );
     },
@@ -79,63 +111,71 @@ const Profile = ({ timeline }) => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/RAVI_KUMAR_RESUME.pdf";
+    link.href = "./public/RAVI_KUMAR_RESUME.pdf";
     link.download = "RAVI_KUMAR_RESUME.pdf";
     link.click();
   };
 
   return (
-    <Box
-      ref={profileRef}
-      as="section"
-      id="profile"
-      sx={{
-        display: "flex", // make sure flex is set
-      }}
-    >
-      <Box as="div" className="profile-pic-container">
-        <Box className="profile-pic-img-box">
-          <img src={ProfileImg} alt="Profile" className="profile-pic-img" />
-        </Box>
-      </Box>
-      <Box className="profile-info">
-        <Box display="flex" flexDirection="column">
-          <Typography variant="caption" className="profile-gretting-text">
-            Hello, I'm
-          </Typography>
-          <Typography
-            variant="h1"
-            className="profile-gretting-name"
-            sx={{ fontSize: "48px", color: "black" }}
-          >
-            Ravi Kumar
-          </Typography>
-          <Typography
-            variant="h6"
-            className="profile-gretting-text-2"
-            sx={{ fontSize: "48px", color: "black" }}
-          >
-            Data Scientist
-          </Typography>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            width="100%"
-            className="resume-btn-box"
-          >
-            <Button
-              className="view-project-btn"
-              variant="contained"
-              endIcon={<TbDownload className="resume-icon" />}
-              onClick={handleDownload}
-            >
-              Resume
-            </Button>
-          </Box>
-        </Box>
-      </Box>
-    </Box>
+    <section ref={profileRef} id="profile" className="profile-hero" aria-labelledby="profile-title">
+      <div className="profile-hero__content">
+        <span className="profile-badge"><span className="profile-badge__dot" aria-hidden="true" /> Available for AI / ML opportunities</span>
+        <p className="profile-greeting">Hello, I&apos;m</p>
+        <h1 id="profile-title" className="profile-name">
+          Ravi Kumar
+        </h1>
+        <div className="profile-role-wrap">
+          <span className="profile-role-label">I build</span>
+          <span className="profile-role" aria-live="polite">
+            {roles[roleIndex]}
+          </span>
+        </div>
+        <p className="profile-description">
+          I build production-ready AI products with Machine Learning, DL, NLP, LLMs, and cloud engineering.
+        </p>
+
+        <p className="profile-achievement"><FaTrophy aria-hidden="true" /> Top 9 Finalist - Google Cloud Agentic AI Hackathon 2025</p>
+
+        <div className="profile-actions">
+          <a className="profile-btn profile-btn--primary" href="#projects">
+            View Projects
+          </a>
+          <button type="button" className="profile-btn profile-btn--secondary" onClick={handleDownload} aria-label="Download Ravi Kumar resume">
+            <TbDownload className="resume-icon" />
+            <span>Download Resume</span>
+          </button>
+        </div>
+
+        <ul className="profile-social" aria-label="Social links">
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <li key={link.label}>
+                <a className="profile-social-link" href={link.href} target="_blank" rel="noreferrer noopener" aria-label={link.label}>
+                  <Icon />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div className="profile-hero__visual">
+        <div className="profile-image-float">
+          <div className="profile-card__image">
+            <img src={ProfileImg} alt="Portrait of Ravi Kumar" className="profile-pic-img" width="640" height="640" loading="eager" decoding="async" />
+          </div>
+        </div>
+        <div className="profile-highlight-card" aria-label="Career highlight">
+          <div className="profile-highlight-card__metric">
+            <strong>5+ years</strong>
+            <span>Years Experience</span>
+          </div>
+          <p>Building AI solutions for production systems.</p>
+        </div>
+      </div>
+    </section>
   );
 };
 

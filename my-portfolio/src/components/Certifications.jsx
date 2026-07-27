@@ -1,19 +1,16 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
+import { FaArrowUpRightFromSquare, FaAward } from "react-icons/fa6";
 
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -72,12 +69,14 @@ const Certifications = () => {
   const settings = {
     dots: false,
     infinite: true,
+    centerMode: true,
+    centerPadding: "24px",
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     speed: 6000,
     autoplaySpeed: 2000,
-
+    pauseOnHover: true,
     cssEase: "linear",
     arrows: false,
     responsive: [
@@ -85,91 +84,69 @@ const Certifications = () => {
         breakpoint: 1280,
         settings: {
           slidesToShow: 2,
+          centerPadding: "16px",
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          centerPadding: "10px",
         }
       }
     ]
   };
 
   return (
-    <Box ref={platformRef} sx={{ padding: '2rem', textAlign: 'center' }} id="certifications">
+    <Box ref={platformRef} component="section" className="certifications-section" id="certifications">
       <Typography className="section_text_p1" variant="caption">
-        Explore My
+        CONTINUOUS LEARNING • PROFESSIONAL GROWTH
       </Typography>
-      <Typography className="section_heading" variant="h3" fontWeight="bold" gutterBottom>
+      <Typography className="section_heading" variant="h3">
         Achievements & Certifications
       </Typography>
+      <Typography component="p" className="certifications-intro">
+        Continuous learning through industry-recognized certifications in AI, cloud, data science, and software engineering.
+      </Typography>
 
-      {/* Navigation Buttons */}
-      <Box sx={{ mt: 4, width: '90%', mx: 'auto' }}>
+
+      <Box className="certifications-carousel">
         <Slider {...settings}>
           {CERTIFICATIONS.map((cert, index) => (
-            <Card
-              key={index}
-              className="cert-card"
-              sx={{
-                height: 350,
-                boxShadow: 5,
-                borderRadius: 2,
-                flexShrink: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
-              <CardMedia
-                component="img"
-                image={cert.image}
-                alt={cert.title}
-                sx={{ height: 180, objectFit: 'contain', py: '1rem' }}
-              />
-              <CardContent sx={{ paddingBottom: '1rem !important' }}>
-                <Typography variant="h6" fontSize="1rem" gutterBottom>{cert.title}</Typography>
-                <Typography variant="body2" color="textSecondary" gutterBottom>{cert.platform}</Typography>
-                <Box sx={{ mt: 1 }}></Box>
-                <Button
-                  variant="outlined"
-                  size="small"
-                  sx={{ px: 2, py: 1, fontweight: 600, textTransform: 'none', borderColor: '#1976d2', color: '#1976d2', '&:hover': { backgroundColor: '#1976d2', color: '#fff', borderColor: '#1976d2',}
-                   }}
-                  onClick={() => handleOpen(cert)}
-                >
-                  View Certificate
+            <Card key={index} className="cert-card">
+              <Box className="cert-card__media-wrap">
+                <span className="cert-card__credential"><FaAward /> Credential</span>
+                <CardMedia component="img" image={cert.image} alt={cert.title} className="cert-card__media" />
+              </Box>
+              <CardContent className="cert-card__content">
+                <Typography variant="h6" className="cert-card__title">
+                  {cert.title}
+                </Typography>
+                <Typography variant="body2" className="cert-card__platform">
+                  {cert.platform}
+                </Typography>
+                <Button size="small" className="cert-card__button" onClick={() => handleOpen(cert)} endIcon={<FaArrowUpRightFromSquare />}>
+                  View credential
                 </Button>
               </CardContent>
             </Card>
           ))}
         </Slider>
-        {/* </div> */}
       </Box>
 
-      {/* Dialog Popup */}
       <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
         <DialogTitle>{selectedCert?.title}</DialogTitle>
         <DialogContent>
-          <img
-            src={selectedCert?.image}
-            alt={selectedCert?.title}
-            style={{ width: '60%', height: 'auto', marginBottom: '1rem', boxSizing: 'border-box' }}
-          />
+          <img src={selectedCert?.image} alt={selectedCert?.title} className="cert-dialog__image" />
           <Typography variant="body1" gutterBottom>
             {selectedCert?.description || "This certification demonstrates my understanding and completion of a professional-level course."}
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2, width: '100%' }}>
-            <Button onClick={handleClose} variant="outlined">Close</Button>
+          <Box className="cert-dialog__actions">
+            <Button onClick={handleClose} variant="outlined">
+              Close
+            </Button>
             {selectedCert?.link && (
-              <Button
-                variant="contained"
-                color="primary"
-                href={selectedCert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Button variant="contained" color="primary" href={selectedCert.link} target="_blank" rel="noopener noreferrer">
                 Open Certificate
               </Button>
             )}
