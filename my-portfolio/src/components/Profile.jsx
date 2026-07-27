@@ -111,7 +111,7 @@ const Profile = ({ timeline }) => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/RAVI_KUMAR_RESUME.pdf";
+    link.href = "./public/RAVI_KUMAR_RESUME.pdf";
     link.download = "RAVI_KUMAR_RESUME.pdf";
     link.click();
   };
@@ -119,7 +119,7 @@ const Profile = ({ timeline }) => {
   return (
     <section ref={profileRef} id="profile" className="profile-hero" aria-labelledby="profile-title">
       <div className="profile-hero__content">
-        <span className="profile-badge"><span className="profile-badge__dot" aria-hidden="true" /> Available for AI-focused opportunities</span>
+        <span className="profile-badge"><span className="profile-badge__dot" aria-hidden="true" /> Available for AI / ML opportunities</span>
         <p className="profile-greeting">Hello, I&apos;m</p>
         <h1 id="profile-title" className="profile-name">
           Ravi Kumar
@@ -131,10 +131,10 @@ const Profile = ({ timeline }) => {
           </span>
         </div>
         <p className="profile-description">
-          I build production-ready AI products with machine learning, LLMs, and cloud engineering.
+          I build production-ready AI products with Machine Learning, DL, NLP, LLMs, and cloud engineering.
         </p>
 
-        <p className="profile-achievement"><FaTrophy aria-hidden="true" /> Top 9 Finalist – Google Cloud Agentic AI Hackathon</p>
+        <p className="profile-achievement"><FaTrophy aria-hidden="true" /> Top 9 Finalist - Google Cloud Agentic AI Hackathon 2025</p>
 
         <div className="profile-actions">
           <a className="profile-btn profile-btn--primary" href="#projects">

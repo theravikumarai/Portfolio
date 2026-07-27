@@ -43,7 +43,7 @@ function App() {
         <Contacts />
         <Box as="footer" className="site-footer">
           <Typography component="p" variant="subtitle1" className="section_text_p1">
-            Copyright &copy; 2026 Ravi Kumar. All Rights Reserved.
+            Copyright &copy; 2023 Ravi Kumar. All Rights Reserved.
           </Typography>
         </Box>
       </Box>

@@ -9,13 +9,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const spotlightCards = [
-  { title: "Experience", value: "5+ Years", detail: "AI Engineer", icon: FaBriefcase, tone: "blue" },
-  { title: "Specialization", value: "GenAI & Agents", detail: "LLMs • RAG • Agentic AI", icon: FaBullseye, tone: "violet" },
-  { title: "Cloud & Backend", value: "FastAPI", detail: "REST APIs • AWS", icon: FaCloud, tone: "cyan" },
+  { title: "Experience", value: "5+ Years", detail: "AI/ML Engineer", icon: FaBriefcase, tone: "blue" },
+  { title: "Specialization", value: "Artificial Intelligence", detail: "ML • DL • NLP • LLMs", icon: FaBullseye, tone: "violet" },
+  { title: "AI Engineering", value: "Production Systems", detail: "FastAPI • MLOps • Cloud", icon: FaCloud, tone: "cyan" },
   { title: "Open To", value: "AI Engineer", detail: "ML Engineer • Data Scientist", icon: FaRocket, tone: "rose" },
 ];
 
-const technologyPills = ["Machine Learning", "LLMs", "FastAPI", "AWS", "Docker", "RAG"];
+const technologyPills = ["Machine Learning", "DL", "NLP", "GenAI", "RAG", "Agentic AI" ];
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -52,11 +52,11 @@ const About = () => {
           <span className="about-pill">Who I Am</span>
           <span className="about-divider" aria-hidden="true" />
           <Typography component="h3" className="about-title">
-            I build practical, production-ready AI systems.
+            I build scalable AI systems that solve real-world business problems.
           </Typography>
           <Box className="about-mission">
             <span>Mission</span>
-            <Typography component="p">Creating scalable AI solutions that are practical, maintainable, and impactful.</Typography>
+            <Typography component="p">Solving meaningful problems through thoughtful engineering, continuous learning, and a user-first mindset.</Typography>
           </Box>
           <Box className="about-tech-pills" aria-label="Core technologies">
             {technologyPills.map((technology) => <span key={technology}>{technology}</span>)}

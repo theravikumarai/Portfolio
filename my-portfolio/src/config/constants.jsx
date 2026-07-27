@@ -11,11 +11,19 @@ import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
 import LinkedIn from "../assets/linkedin.png";
+import Youtube from "../assets/youtube.png";
 import CourseraLogo from "../assets/certificates/Crash_Course_on_Python.png";
 import DatabricksLogo from "../assets/certificates/Databricks_Fundamentsals.png";
 import LeadersLogo from "../assets/certificates/Emerging_Leadership_Program.png";
 import ComputerVisionLogo from "../assets/certificates/Introduction_to_Computer_Vision_with_TensorFlow.png";
-import { FaKaggle } from "react-icons/fa6";
+import AwsAiPracticioner from "../assets/certificates/AWS AI Certified Practicioner.png";
+import AwsSagemaker from "../assets/certificates/AWS Sagemaker.png";
+import BigData from "../assets/certificates/Big Data.png";
+import Matlab from "../assets/certificates/Matlab.png";
+import PowerBI from "../assets/certificates/PowerBI.png";
+import RAG from "../assets/certificates/RAG.png";
+
+import Kaggle from "../assets/kaggle.png";
 
 const ABOUT = [
     "Building scalable solutions with AI, Machine Learning, NLP, Generative AI, and Agentic AI to solve complex real-world business challenges, optimize decision-making, and drive meaningful impact at scale."
@@ -33,7 +41,7 @@ const PROFICIENCIES = {
       id: 2,
       title: "Generative AI & LLMs",
       image: <img src={Programming} alt="Programming Languages" className="icon" />,
-      badges: ["LLMs", "RAG", "Prompt Engineering", "Embeddings", "Vector Databases", "LangChain", "AI Agents"],
+      badges: ["LLMs", "RAG", "Prompt Engineering", "Embeddings", "Vector Databases", "LangChain", "LangGraph", "AI Agents"],
     },
     {
       id: 3,
@@ -45,17 +53,13 @@ const PROFICIENCIES = {
       id: 4,
       title: "Backend & APIs",
       image: <img src={Cloud} alt="Cloud Platforms" className="icon" />,
-      badges: ["FastAPI", "REST APIs", "Pydantic", "Docker", "Streamlit", "Async Python", "API Design"],
+      badges: ["FastAPI", "Pydantic", "Docker", "Streamlit", "Async Python", "Kubernetes"],
     },
     {
       id: 5,
       title: "MLOps & Cloud",
       image: <img src={Visualization} alt="Visualization" className="icon" />,
-      badges: ["AWS", "Lambda", "S3", "API Gateway", "CI/CD", "GitHub Actions", "Monitoring"],
-      groups: [
-        { label: "Cloud", items: ["AWS", "Lambda", "S3", "API Gateway"] },
-        { label: "Automation", items: ["CI/CD", "GitHub Actions", "Monitoring"] },
-      ],
+      badges: ["AWS", "GCP", "Azure", "Lambda", "S3", "API Gateway", "CI/CD", "GitHub Actions", "Monitoring", "MLFlow"],
     },
     {
       id: 6,
@@ -118,16 +122,7 @@ const PROJECTS = [
     //     description: "This project leverages Generative AI and Deep Learning to create videos from text-based inputs. It integrates Natural Language Processing (NLP) and Computer Vision to generate relevant visuals, animations, and voiceovers. Using LLMs, AI-powered video synthesis, and AWS cloud services, the system converts scripts into engaging video content. This solution is ideal for content creators, businesses, and automated storytelling, enabling scalable and high-quality video production with minimal manual effort.",
     //     image: <img src={Project3} alt="AI Video Creator" className="project_img" />,
     //     link: "https://ai-video-creator.streamlit.app/"
-        
-    // },
-    // {
-    //     id: 4,
-    //     title: "Auto Insta Content Uploader",
-    //     description: "Seamlessly scheduling and uploading content with AI-powered automation. This project automates the process of uploading videos, images, and captions to social media platforms like Instagram, Twitter, and LinkedIn. Using Python, Selenium, and API integrations, it streamlines content scheduling, hashtag management, and post customization. The system is configurable via a JSON-based setup, allowing users to enable or disable features like thumbnail usage, captions, and logging. Designed for content creators and businesses, this tool enhances efficiency by eliminating manual uploads and ensuring consistent online engagement.",
-    //     image: <img src={Project4} alt="Automate Social Media Content Uploader" className="project_img" />,
-    //     link: "https://auto-insta-content-uploader.streamlit.app/"
-        
-    // },
+   // },
 ];
 
 const CERTIFICATIONS = [
@@ -157,54 +152,109 @@ const CERTIFICATIONS = [
   },
   {
     id: 4,
-    title: "Introduction to Computer Vision with TensorFlow | Coursera",
+    title: "Introduction to Computer Vision with TensorFlow | Google Cloud",
     platform: "Coursera",
     link: "https://www.coursera.org/account/accomplishments/verify/6EC5TGTLWN2Z",
     image: ComputerVisionLogo,
     description: "A certification demonstrating foundational knowledge of computer vision concepts using TensorFlow.",
   },
+  {
+    id: 5,
+    title: "AWS AI Certified Practicioner | AWS",
+    platform: "AWS",
+    link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/08ca0cbcd2384a4c9dd56319abb585ff",
+    image: AwsAiPracticioner,
+    description: "Validates foundational knowledge of AI, machine learning, and generative AI concepts on AWS.",
+  },
+  {
+    id: 6,
+    title: "AWS Sagemaker | Capgemini University",
+    platform: "My Learning",
+    // link: "",
+    image: AwsSagemaker,
+    description: "Demonstrates practical skills in building, training, and deploying machine learning models using Amazon SageMaker.",
+  },
+  {
+    id: 7,
+    title: "Big Data | Capgemini University",
+    platform: "My Learning",
+    // link: "",
+    image: BigData,
+    description: "Covers core Big Data concepts, distributed computing, and modern data processing technologies.",
+  },
+  {
+    id: 8,
+    title: "Matlab Onramp | MathWorks Training Services",
+    platform: "MathWorks",
+    link: "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=fa17ab94-4b83-4fbc-adef-7917927c2903&fbclid=IwY2xjawE2StpleHRuA2FlbQIxMQABHQZppCYYgezWYMSVYj9_pYboxRoYndE2N7K228mxJCyp8fphFFnzePldWg_aem_FD_xKi7VtWAaf6lZRVpf3A",
+    image: Matlab,
+    description: "Demonstrates proficiency in MATLAB fundamentals for numerical computing, programming, and data analysis.",
+  },
+  {
+    id: 9,
+    title: "Microsoft Power BI | Skill Nation",
+    platform: "Skill Nation",
+    link: "https://excel.jatanshah.in/your-certificate/2D0AF91F5F95-2D0AF9112B49-839B702BFE/",
+    image: PowerBI,
+    description: "Validates skills in creating interactive dashboards, reports, and business intelligence visualizations with Power BI.",
+  },
+  {
+    id: 10,
+    title: "Retrieval Augmented Generation (RAG) | DeepLearning.AI",
+    platform: "Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/MN7IWQACE9BY",
+    image: RAG,
+    description: "Demonstrates expertise in building AI applications using Retrieval-Augmented Generation (RAG) techniques.",
+  },
 ];
+
 
 const OTHER_PLATFORMS = [
     {
         id: 1,
         title: "GitHub",
-        description: "Explore my projects, Learning Path, open-source contributions and technical experiments.",
-        highlights: ["AI Projects", "Open Source", "Learning Journey"],
-        cta: "Visit GitHub",
+        // description: "Explore my projects, Learning Path, open-source contributions and technical experiments.",
+        // highlights: ["AI Projects", "Open Source", "Learning Journey"],
+        cta: "Explore",
         link: "https://github.com/RaviikrDS",
-        image: <img src={Github} alt="GitHub" className="project_img" />
+        image: Github
     },
     {
         id: 2,
         title: "Medium",
-        description: "Read my in-depth articles on Data Science, AI, Machine Learning and emerging technologies.",
-        highlights: ["AI Articles", "LLM Tutorials", "Learning Notes"],
-        cta: "Read Articles",
+        // description: "Read my in-depth articles on Data Science, AI, Machine Learning and emerging technologies.",
+        // highlights: ["AI Articles", "LLM Tutorials", "Learning Notes"],
+        cta: "Explore",
         link: "https://medium.com/@ravikumaarDS",
-        image: <img src={Medium} alt="Medium" className="project_img" />
+        image: Medium
+
     },
     {
         id: 3,
         title: "LinkedIn",
-        highlights: ["AI Engineering", "Professional Journey", "Collaboration"],
-        cta: "Connect on LinkedIn",
-        description: "Let’s connect professionally - follow my latest updates, posts and collaborations.",
+        // highlights: ["AI Engineering", "Professional Journey", "Collaboration"],
+        cta: "Explore",
+        // description: "Let’s connect professionally - follow my latest updates, posts and collaborations.",
         link: "https://www.linkedin.com/in/raviikrds/",
-        image: <img src={LinkedIn} alt="LinkedIn" className="project_img" />
+        image: LinkedIn
     },
     {
         id: 4,
         title: "Kaggle",
-        description: "Explore my notebooks, competitions, and data science experiments in the Kaggle community.",
-        highlights: ["ML Notebooks", "Data Science", "Competitions"],
-        cta: "Explore Kaggle",
+        // description: "Explore my notebooks, competitions, and data science experiments in the Kaggle community.",
+        // highlights: ["ML Notebooks", "Data Science", "Competitions"],
+        cta: "Explore",
         link: "https://www.kaggle.com/raviikrds",
-        image: (
-            <span className="platform-fallback">
-                <FaKaggle />
-            </span>
-        )
+        image: Kaggle
+    },
+    {
+        id: 5,
+        title: "Youtube",
+        // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
+        // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
+        cta: "Explore",
+        link: "https://www.youtube.com/@raviikrds",
+        image: Youtube
     }
 ];
 

@@ -66,7 +66,7 @@ const Proficiencies = () => {
         Technical Expertise
       </Typography>
       <Typography component="p" className="expertise-intro">
-        End-to-end expertise in designing, deploying, and scaling production-ready AI systems—from machine learning models to cloud-native applications.
+        End-to-end expertise in designing, deploying, and scaling production-ready AI systems from machine learning models to cloud-native applications.
       </Typography>
 
       <Box className="skills-grid">
