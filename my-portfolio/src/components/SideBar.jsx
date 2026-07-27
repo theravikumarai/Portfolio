@@ -29,7 +29,7 @@ export default function SwipeableTemporaryDrawer({ showSidePanel, setShowSidePan
 
   const list = (
     <Box
-      sx={{ width: "auto", display: "flex", flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "center", padding: 2 }}
+      className="mobile-nav"
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
@@ -45,13 +45,11 @@ export default function SwipeableTemporaryDrawer({ showSidePanel, setShowSidePan
         <Link
           key={item.label}
           href=""
-          className="nav-link"
+          className="mobile-nav__link"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick(item.path);
           }}
-          display="block"
-          sx={{ px: 2, py: 1 }}
         >
           {item.label}
         </Link>
@@ -61,10 +59,11 @@ export default function SwipeableTemporaryDrawer({ showSidePanel, setShowSidePan
 
   return (
     <SwipeableDrawer
-      anchor="bottom"
+      anchor="right"
       open={open}
       onClose={toggleDrawer(false)}
       onOpen={toggleDrawer(true)}
+      PaperProps={{ className: "mobile-drawer" }}
     >
       <Box className="sidebar-close-btn" onClick={toggleDrawer(false)}>
         <IoClose />

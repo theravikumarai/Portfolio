@@ -208,7 +208,7 @@ ALLOWED_ORIGINS=
 
 **Ravi Kumar**
 
--   Data Scientist
+-   AI Enginner
 
 
 ------------------------------------------------------------------------

@@ -1,57 +1,77 @@
-import { useRef, useState } from 'react';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Logo from "assets/logo.png"
-import { useGSAP } from '@gsap/react';
-import { HiMenu } from "react-icons/hi";
-import SideBar from './SideBar';
-import { SlMenu } from "react-icons/sl";
+import { useEffect, useRef, useState } from "react";
+import Box from "@mui/material/Box";
+import Logo from "assets/logo.png";
+import { useGSAP } from "@gsap/react";
+import { HiMenu, HiMoon, HiSun } from "react-icons/hi";
+import SideBar from "./SideBar";
 
-const Header = ({timeline}) => {
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Expertise", href: "#proficiencies" },
+  { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Platforms", href: "#other-platforms" },
+];
 
-    const headerRef = useRef(null);
-    const [showSidePanel, setShowSidePanel] = useState(false);
+const Header = ({ timeline, isDark, onThemeToggle }) => {
+  const headerRef = useRef(null);
+  const [showSidePanel, setShowSidePanel] = useState(false);
+  const [activeSection, setActiveSection] = useState("profile");
 
-  useGSAP(
-    () => {
-      const logo = headerRef.current.querySelector('img');
-      const links = headerRef.current.querySelectorAll('.nav-link');
-      const menuIcon = headerRef.current.querySelector('.menu-icon');
-
-      // Add animation to the passed timeline
-      timeline.from([logo, ...links, menuIcon], {
-        y: -30,
-        opacity: 0,
-        delay: 1,
-        duration: 0.5,
-        stagger: 0.15,
-      });
-    },
-    { scope: headerRef, dependencies: [timeline] }
-  );
-
-
-    return (
-        <Box ref={headerRef} sx={{display:"flex", justifyContent:"center", alignItems:"center"}} width="100%">
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} py={1} className="header-link-container">
-             <img src={Logo} alt="Logo" style={{ height: '40px' }} />
-             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' } }} alignItems="center" ml="auto" gap={4}>
-                 <Link href="#about" className="nav-link">About</Link>
-                 <Link href="#proficiencies" className="nav-link">Proficiencies</Link>
-                 <Link href="#projects" className="nav-link">Projects</Link>  
-                 <Link href="#certifications" className="nav-link">Certifications</Link>  
-                 <Link href="#other-platforms" className="nav-link">Other Platforms</Link>  
-                 <Link href="#contacts" className="nav-link">Contact</Link>  
-             </Box>
-                <Box sx={{ display: { xs: 'flex', lg: 'none', cursor: 'pointer' } }}>
-                   <SlMenu color='black' size={25} onClick={() => setShowSidePanel(true)} className='menu-icon' />
-                </Box>
-        </Box>
-        
-        <SideBar showSidePanel={showSidePanel} setShowSidePanel={setShowSidePanel} />
-        
-       </Box>
+  useEffect(() => {
+    const sections = ["profile", ...navItems.map((item) => item.href.slice(1)), "contacts"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find((entry) => entry.isIntersecting);
+        if (visibleSection) setActiveSection(visibleSection.target.id);
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 },
     );
-}
 
-export default Header
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useGSAP(() => {
+    const logo = headerRef.current?.querySelector(".site-brand");
+    const links = headerRef.current?.querySelectorAll(".nav-link");
+    const menuButton = headerRef.current?.querySelector(".menu-icon");
+    const animationTargets = [logo, ...Array.from(links || []), menuButton].filter(Boolean);
+
+    if (animationTargets.length) {
+      timeline.from(animationTargets, { y: -20, opacity: 0, delay: 0.45, duration: 0.45, stagger: 0.08 });
+    }
+  }, { scope: headerRef, dependencies: [timeline] });
+
+  return (
+    <Box ref={headerRef} component="header" className="site-header">
+      <Box className="header-link-container">
+        <a className="site-brand" href="#profile" aria-label="Ravi Kumar home">
+          <img src={Logo} alt="Ravi Kumar logo" />
+          <span className="site-brand__text">
+            <strong>Ravi Kumar</strong>
+            <small>AI Engineer</small>
+          </span>
+        </a>
+
+        <Box component="nav" className="desktop-nav" aria-label="Main navigation">
+          {navItems.map((item) => <a className={`nav-link ${activeSection === item.href.slice(1) ? "nav-link--active" : ""}`} href={item.href} key={item.href}>{item.label}</a>)}
+        </Box>
+
+        <button type="button" className="header-theme-toggle" onClick={onThemeToggle} aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"} title={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+          {isDark ? <HiSun /> : <HiMoon />}
+        </button>
+        <a className={`header-contact-link nav-link ${activeSection === "contacts" ? "nav-link--active" : ""}`} href="#contacts">Let&apos;s Talk</a>
+        <button type="button" className="menu-icon" onClick={() => setShowSidePanel(true)} aria-label="Open navigation menu" aria-expanded={showSidePanel}>
+          <HiMenu />
+        </button>
+      </Box>
+
+      <SideBar showSidePanel={showSidePanel} setShowSidePanel={setShowSidePanel} />
+    </Box>
+  );
+};
+
+export default Header;
