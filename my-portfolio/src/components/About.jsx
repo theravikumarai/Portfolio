@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const spotlightCards = [
   { title: "Experience", value: "5+ Years", detail: "AI/ML Engineer", icon: FaBriefcase, tone: "blue" },
-  { title: "Specialization", value: "Artificial Intelligence", detail: "ML • DL • NLP • LLMs", icon: FaBullseye, tone: "violet" },
-  { title: "AI Engineering", value: "Production Systems", detail: "FastAPI • MLOps • Cloud", icon: FaCloud, tone: "cyan" },
-  { title: "Open To", value: "AI Engineer", detail: "ML Engineer • Data Scientist", icon: FaRocket, tone: "rose" },
+  { title: "FOCUS", value: "Generative AI & ML", detail: "ML • DL • NLP • LLMs", icon: FaBullseye, tone: "violet" },
+  { title: "AI Engineering", value: "Production AI", detail: "FastAPI • MLOps • Cloud", icon: FaCloud, tone: "cyan" },
+  { title: "Open To", value: "AI Engineer", detail: "GenAI • ML • Agentic AI", icon: FaRocket, tone: "rose" },
 ];
 
-const technologyPills = ["Machine Learning", "DL", "NLP", "GenAI", "RAG", "Agentic AI" ];
+const technologyPills = ["Machine Learning", "DL", "Generative AI", "RAG", "Agentic AI" ];
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -52,11 +52,11 @@ const About = () => {
           <span className="about-pill">Who I Am</span>
           <span className="about-divider" aria-hidden="true" />
           <Typography component="h3" className="about-title">
-            I build scalable AI systems that solve real-world business problems.
+            Building scalable AI systems for real-world business problems.
           </Typography>
           <Box className="about-mission">
-            <span>Mission</span>
-            <Typography component="p">Solving meaningful problems through thoughtful engineering, continuous learning, and a user-first mindset.</Typography>
+            <span>APPROACH</span>
+            <Typography component="p">Delivering production-ready AI solutions through modern engineering, scalable architectures, and continuous innovation.</Typography>
           </Box>
           <Box className="about-tech-pills" aria-label="Core technologies">
             {technologyPills.map((technology) => <span key={technology}>{technology}</span>)}

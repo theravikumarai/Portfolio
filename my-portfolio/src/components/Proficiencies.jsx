@@ -5,7 +5,7 @@ import { PROFICIENCIES } from "../config/constants.jsx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaBrain, FaChartLine, FaCloud, FaRobot, FaServer, FaShieldHalved } from "react-icons/fa6";
+import { FaBrain, FaChartLine, FaCloud, FaRobot, FaServer, FaShieldHalved, FaDiagramProject, FaMicrochip, FaCubes,} from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +16,9 @@ const skillIcons = {
   4: FaServer,
   5: FaCloud,
   6: FaShieldHalved,
+  7: FaShieldHalved,
+  8: FaMicrochip,
+  9: FaCubes,
 };
 
 const Proficiencies = () => {
@@ -63,23 +66,28 @@ const Proficiencies = () => {
         AI Engineering · Data Science · Cloud
       </Typography>
       <Typography variant="h3" className="section_heading">
-        Technical Expertise
+        AI Engineering Expertise
       </Typography>
       <Typography component="p" className="expertise-intro">
-        End-to-end expertise in designing, deploying, and scaling production-ready AI systems from machine learning models to cloud-native applications.
+        Building intelligent applications with Machine Learning, Generative AI, Multi-Agent Systems, Cloud and Production AI.
       </Typography>
 
       <Box className="skills-grid">
         {PROFICIENCIES?.details.map((item) => {
           const Icon = skillIcons[item.id];
           return (
-          <Box component="article" key={item?.id} className="skill-card">
+          <Box
+  component="article"
+  key={item.id}
+  className={`skill-card skill-card-${item.id}`}
+>
             <Box className="skill-card__header">
               <Box className="skill-card__icon" aria-hidden="true"><Icon /></Box>
-              <span className="skill-card__count">Core</span>
+              {/* <span className="skill-card__count">Core</span> */}
+              <span className="skill-card__count">{item.level}</span>
             </Box>
             <Typography component="h3" className="skill-card__title">{item?.title}</Typography>
-            <Typography component="p" className="skill-card__label">Core capabilities</Typography>
+            <Typography component="p" className="skill-card__label"></Typography>
             {item.groups ? item.groups.map((group) => (
               <Box className="skill-card__group" key={group.label}>
                 <span>{group.label}</span>
@@ -97,8 +105,8 @@ const Proficiencies = () => {
         })}
       </Box>
       <Box className="learning-strip">
-        <span>Currently exploring</span>
-        <p><b>✓</b> Agentic AI <b>✓</b> LangGraph <b>✓</b> MCP <b>✓</b> AI Agents</p>
+        <span>SPECIALIZING IN</span>
+        <p><b></b><b></b> AI System Design <b>✓</b> Multi-Agent Architectures<b>✓</b></p>
       </Box>
     </Box>
   );
