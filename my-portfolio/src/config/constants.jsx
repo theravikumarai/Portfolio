@@ -198,7 +198,7 @@ const PROJECTS = [
         architecture: ["Documents", "Embeddings", "FAISS retrieval", "Answer generation"],
         outcome: "Gives teams a focused, low-friction way to surface answers from their internal documents.",
         image: <img src={Project2} alt="Smart FaQ Chatbot" className="project_img" />,
-        link: "https://github.com/RaviikrDS/smart_faq_chatbot.git/"
+        link: "https://github.com/theravikumarai/smart_faq_chatbot.git/"
     },
     {
         id: 3,
@@ -216,7 +216,7 @@ const PROJECTS = [
             <div><b>React</b><i>→</i><b>FastAPI</b><i>→</i><b>AWS</b></div>
           </div>
         ),
-        link: "https://github.com/RaviikrDS"
+        link: "https://github.com/theravikumarai"
     },
     // {
     //     id: 3,
@@ -318,7 +318,7 @@ const OTHER_PLATFORMS = [
         // description: "Explore my projects, Learning Path, open-source contributions and technical experiments.",
         // highlights: ["AI Projects", "Open Source", "Learning Journey"],
         cta: "Explore",
-        link: "https://github.com/RaviikrDS",
+        link: "https://github.com/theravikumarai",
         image: Github
     },
     {
@@ -327,7 +327,7 @@ const OTHER_PLATFORMS = [
         // description: "Read my in-depth articles on Data Science, AI, Machine Learning and emerging technologies.",
         // highlights: ["AI Articles", "LLM Tutorials", "Learning Notes"],
         cta: "Explore",
-        link: "https://medium.com/@ravikumaarDS",
+        link: "https://theravikumarai.medium.com/",
         image: Medium
 
     },
@@ -337,7 +337,7 @@ const OTHER_PLATFORMS = [
         // highlights: ["AI Engineering", "Professional Journey", "Collaboration"],
         cta: "Explore",
         // description: "Let’s connect professionally - follow my latest updates, posts and collaborations.",
-        link: "https://www.linkedin.com/in/raviikrds/",
+        link: "https://www.linkedin.com/in/theravikumarai/",
         image: LinkedIn
     },
     {
@@ -346,7 +346,7 @@ const OTHER_PLATFORMS = [
         // description: "Explore my notebooks, competitions, and data science experiments in the Kaggle community.",
         // highlights: ["ML Notebooks", "Data Science", "Competitions"],
         cta: "Explore",
-        link: "https://www.kaggle.com/raviikrds",
+        link: "https://www.kaggle.com/theravikumarai",
         image: Kaggle
     },
     {
@@ -355,7 +355,7 @@ const OTHER_PLATFORMS = [
         // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
         // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
         cta: "Explore",
-        link: "https://www.youtube.com/@raviikrds",
+        link: "https://www.youtube.com/@theravikumarai",
         image: Youtube
     }
 ];
