@@ -88,7 +88,7 @@ class Settings(BaseSettings):
     # ======================================================
 
     ALLOWED_ORIGINS: str = (
-        "https://portfolio-raviikrds.vercel.app,"
+        "https://theravikumarai.vercel.app,"
         "http://localhost:3000,"
         "http://localhost:5173"
     )
