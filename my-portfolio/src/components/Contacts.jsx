@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const contactDetails = [
   { icon: FaLocationDot, label: "Based in", value: "Pune, India" },
-  { icon: FaEnvelope, label: "Email", value: "raviikrds@gmail.com", href: "mailto:raviikrds@gmail.com" },
+  { icon: FaEnvelope, label: "Email", value: "theravikumarai@gmail.com", href: "mailto:theravikumarai@gmail.com" },
   { icon: FaBriefcase, label: "Availability", value: "Open to work" },
   { icon: FaBolt, label: "Response time", value: "Replies within 24 hrs" },
 ];
