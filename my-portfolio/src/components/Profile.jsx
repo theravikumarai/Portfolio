@@ -8,11 +8,11 @@ import ProfileImg from "../assets/profile.png";
 const roles = ["AI Products", "Production AI Systems", "Generative AI Applications", "LLM Solutions"];
 
 const socialLinks = [
-  { href: "https://github.com/RaviikrDS", label: "GitHub", icon: FaGithub },
-  { href: "https://www.linkedin.com/in/raviikrds/", label: "LinkedIn", icon: FaLinkedin },
-  { href: "https://medium.com/@ravikumaarDS", label: "Medium", icon: FaMedium },
-  { href: "https://www.kaggle.com/raviikrds", label: "Kaggle", icon: FaKaggle },
-  { href: "mailto:raviikrds@gmail.com", label: "Email", icon: FaEnvelope },
+  { href: "https://github.com/theravikumarai", label: "GitHub", icon: FaGithub },
+  { href: "https://www.linkedin.com/in/theravikumarai/", label: "LinkedIn", icon: FaLinkedin },
+  { href: "https://theravikumarai.medium.com/", label: "Medium", icon: FaMedium },
+  { href: "https://www.kaggle.com/theravikumarai", label: "Kaggle", icon: FaKaggle },
+  { href: "mailto:theravikumarai@gmail.com", label: "Email", icon: FaEnvelope },
 ];
 
 const Profile = ({ timeline }) => {
