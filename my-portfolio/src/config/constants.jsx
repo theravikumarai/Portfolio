@@ -12,6 +12,7 @@ import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
 import LinkedIn from "../assets/linkedin.png";
 import Youtube from "../assets/youtube.png";
+import HuggingFace from "../assets/huggingface.png";
 import CourseraLogo from "../assets/certificates/Crash_Course_on_Python.png";
 import DatabricksLogo from "../assets/certificates/Databricks_Fundamentsals.png";
 import LeadersLogo from "../assets/certificates/Emerging_Leadership_Program.png";
@@ -357,7 +358,16 @@ const OTHER_PLATFORMS = [
         cta: "Explore",
         link: "https://www.youtube.com/@theravikumarai",
         image: Youtube
-    }
+    },
+    {
+        id: 6,
+        title: "HuggingFace",
+        // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
+        // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
+        cta: "Explore",
+        link: "https://huggingface.co/theravikumarai",
+        image: HuggingFace
+    },
 ];
 
 const CONTACTINFO=[

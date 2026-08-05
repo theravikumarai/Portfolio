@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { TbDownload } from "react-icons/tb";
 import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaKaggle, FaTrophy } from "react-icons/fa6";
+import { SiHuggingface } from "react-icons/si";
 import gsap from "gsap";
 import ProfileImg from "../assets/profile.png";
 
@@ -12,6 +13,7 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/theravikumarai/", label: "LinkedIn", icon: FaLinkedin },
   { href: "https://theravikumarai.medium.com/", label: "Medium", icon: FaMedium },
   { href: "https://www.kaggle.com/theravikumarai", label: "Kaggle", icon: FaKaggle },
+  { href: "https://huggingface.co/theravikumarai", label: "HuggingFace", icon: SiHuggingface },
   { href: "mailto:theravikumarai@gmail.com", label: "Email", icon: FaEnvelope },
 ];
 

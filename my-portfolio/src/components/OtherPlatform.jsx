@@ -2,8 +2,9 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { FaArrowRight, FaGithub, FaKaggle, FaLinkedin, FaMedium, FaYoutube } from "react-icons/fa6";
+import { SiHuggingface } from "react-icons/si";
 import { OTHER_PLATFORMS } from "../config/constants.jsx";
-const platformIcons = { GitHub: FaGithub, Medium: FaMedium, LinkedIn: FaLinkedin, Kaggle: FaKaggle, Youtube: FaYoutube };
+const platformIcons = { GitHub: FaGithub, Medium: FaMedium, LinkedIn: FaLinkedin, Kaggle: FaKaggle, Youtube: FaYoutube, HuggingFace: SiHuggingface };
 const OtherPlatform = () => {
 
 return (
