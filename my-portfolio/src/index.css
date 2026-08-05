@@ -1637,18 +1637,24 @@ white-space: normal;
 
 .contact-details {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
+  /* grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem; */
   margin: 2rem 0 0;
   padding: 1.5rem 0 0;
   border-top: 1px solid #e2e8f0;
   list-style: none;
+  grid-template-columns: 1fr 1.15fr;
+  gap:1rem;
 }
 
 .contact-detail {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
+}
+.contact-detail__content {
+  flex: 1;
   min-width: 0;
 }
 
