@@ -364,7 +364,7 @@ const CONTACTINFO=[
 "Rajiv Gandhi Infotech Park, Hinjewadi Phase 3, Pune",
         "Maharashtra, India",
         "411057",
-        "raviikrds@gmail.com",
+        "theravikumarai@gmail.com",
 ];
 
 
