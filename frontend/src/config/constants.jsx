@@ -6,8 +6,8 @@ import Visualization from "../assets/front-end-web-development.png";
 import SoftSkills from "../assets/softskills.png";
 import Project1 from "../assets/tubenotes.png";
 import Project2 from "../assets/faq.png";
-import Project3 from "../assets/AiVIdeo.jpg";
-import Project4 from "../assets/SocialMedia.jpg";
+import Project3 from "../assets/portfolio.png";
+// import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
 import LinkedIn from "../assets/linkedin.png";
@@ -204,7 +204,7 @@ const PROJECTS = [
     },
     {
         id: 3,
-        title: "Portfolio Website",
+        title: "Personal Portfolio",
         summary: "A full-stack portfolio application built with React, FastAPI, and AWS serverless services.",
         problem: "Designed to provide a simple way for visitors to connect while demonstrating a production-oriented serverless architecture.",
         features: ["React Frontend", "FastAPI Backend", "AWS Serverless Deployment", "Multi-channel notifications"],
@@ -212,12 +212,13 @@ const PROJECTS = [
         metrics: ["Serverless Architecture", "REST API", "AWS Deployment"],
         architecture: ["React", "API Gateway", "AWS Lambda", "Amazon DynamoDB", "Notification Service"],
         outcome: "Demonstrates a full-stack application with a serverless backend and cloud-native deployment on AWS.",
-        image: (
-          <div className="portfolio-project-visual" aria-label="Cloud-native portfolio architecture">
-            <span>Cloud-Native Portfolio</span>
-            <div><b>React</b><i>→</i><b>FastAPI</b><i>→</i><b>AWS</b></div>
-          </div>
-        ),
+        // image: (
+        //   <div className="portfolio-project-visual" aria-label="Cloud-native portfolio architecture">
+        //     <span>Portfolio Website</span>
+        //     <div><b>React</b><i>→</i><b>FastAPI</b><i>→</i><b>AWS</b></div>
+        //   </div>
+        // ),
+        image: <img src={Project3} alt="Personal Portfolio" className="project_img" />,
         link: "https://github.com/theravikumarai/Portfolio",
         demoLink: "https://theravikumarai.vercel.app/"
     },
