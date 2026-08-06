@@ -199,25 +199,27 @@ const PROJECTS = [
         architecture: ["Documents", "Embeddings", "FAISS retrieval", "Answer generation"],
         outcome: "Gives teams a focused, low-friction way to surface answers from their internal documents.",
         image: <img src={Project2} alt="Smart FaQ Chatbot" className="project_img" />,
-        link: "https://github.com/theravikumarai/smart_faq_chatbot.git/"
+        link: "https://github.com/theravikumarai/smart_faq_chatbot.git/",
+        demoLink: ""
     },
     {
         id: 3,
-        title: "Cloud-Native Portfolio Platform",
-        summary: "A portfolio platform with a React experience and a serverless FastAPI contact backend on AWS.",
-        problem: "Provides a reliable way for recruiters and collaborators to contact me while demonstrating production cloud architecture.",
-        features: ["Serverless contact API", "Notification workflow", "Cloud-ready deployment", "Responsive portfolio UI"],
-        techStack: ["React", "FastAPI", "AWS Lambda", "API Gateway", "DynamoDB", "S3", "SNS"],
-        metrics: ["Serverless Backend", "AWS Lambda", "Event Notifications"],
-        architecture: ["React UI", "API Gateway", "Lambda", "DynamoDB & SNS"],
-        outcome: "Combines a recruiter-friendly portfolio with a scalable cloud-native contact workflow.",
+        title: "Portfolio Website",
+        summary: "A full-stack portfolio application built with React, FastAPI, and AWS serverless services.",
+        problem: "Designed to provide a simple way for visitors to connect while demonstrating a production-oriented serverless architecture.",
+        features: ["React Frontend", "FastAPI Backend", "AWS Serverless Deployment", "Multi-channel notifications"],
+        techStack: ["React", "Vite", "FastAPI", "AWS Lambda", "API Gateway", "Amazon S3", "Amazon DynamoDB", "Amazon SNS"],
+        metrics: ["Serverless Architecture", "REST API", "AWS Deployment"],
+        architecture: ["React", "API Gateway", "AWS Lambda", "Amazon DynamoDB", "Notification Service"],
+        outcome: "Demonstrates a full-stack application with a serverless backend and cloud-native deployment on AWS.",
         image: (
           <div className="portfolio-project-visual" aria-label="Cloud-native portfolio architecture">
             <span>Cloud-Native Portfolio</span>
             <div><b>React</b><i>→</i><b>FastAPI</b><i>→</i><b>AWS</b></div>
           </div>
         ),
-        link: "https://github.com/theravikumarai"
+        link: "https://github.com/theravikumarai/Portfolio",
+        demoLink: "https://theravikumarai.vercel.app/"
     },
     // {
     //     id: 3,
