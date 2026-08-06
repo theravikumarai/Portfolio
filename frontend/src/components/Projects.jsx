@@ -50,8 +50,8 @@ const Projects = () => {
               {item.image}
               <Box className="project-image__overlay" />
               <Box className="project-card__badges">
-                <span className="project-chip"><FaCodeBranch /> AI Product</span>
-                <span className="project-chip project-chip--ready"><FaCheck /> Production ready</span>
+                <span className="project-chip"><FaCodeBranch />Open Source</span>
+                <span className="project-chip project-chip--ready"><FaCheck /> MAINTAINED</span>
               </Box>
               {item.demoLink ? (
                 <a className="project-image__action" href={item.demoLink} target="_blank" rel="noopener noreferrer"><FaPlay /> View Demo</a>
@@ -67,7 +67,7 @@ const Projects = () => {
               </Box>
 
               <Box className="project-card__problem-line">
-                <Typography component="span">Problem solved</Typography>
+                <Typography component="span">PURPOSE</Typography>
                 <Typography component="p">{item.problem}</Typography>
               </Box>
 
@@ -106,7 +106,7 @@ const Projects = () => {
               <Typography className="project-dialog__summary">{selectedProject.summary}</Typography>
               <Box className="project-dialog__grid">
                 <Box className="project-dialog__section project-dialog__section--problem">
-                  <Typography component="h4">Problem solved</Typography>
+                  <Typography component="h4">Purpose</Typography>
                   <Typography component="p">{selectedProject.problem}</Typography>
                 </Box>
                 <Box className="project-dialog__section">

@@ -53,19 +53,23 @@ Notification Service
 ## Project Structure
 
 ```
-portfolio-project/
-├── frontend/
+Portfolio/
 ├── backend/
 │   ├── app/
-│   │   ├── api/
-│   │   ├── services/
-│   │   ├── repositories/
-│   │   ├── middleware/
-│   │   ├── schemas/
-│   │   ├── exceptions/
-│   │   ├── core/
-│   │   └── main.py
+│   ├── scripts/
+│   ├── tests/
+│   ├── lambda_handler.py
 │   └── requirements.txt
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── .github/
+├── .gitignore
+└── README.md
 ```
 
 ## API
