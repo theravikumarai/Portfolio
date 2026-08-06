@@ -136,6 +136,8 @@ Deploy to Vercel.
 * Infrastructure as Code
 * Automated testing
 
-## License
+## Copyright
 
-This project is licensed under the MIT License.
+© 2026 Ravi Kumar.
+
+This repository is provided for portfolio and demonstration purposes only. The source code may not be copied, modified, or redistributed without prior permission.
