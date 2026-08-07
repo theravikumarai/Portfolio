@@ -113,7 +113,7 @@ const Profile = ({ timeline }) => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "./frontend/public/RAVI_KUMAR_RESUME.pdf";
+    link.href = "./public/RAVI_KUMAR_RESUME.pdf";
     link.download = "RAVI_KUMAR_RESUME.pdf";
     link.click();
   };
