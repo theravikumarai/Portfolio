@@ -7,7 +7,7 @@ import SoftSkills from "../assets/softskills.png";
 import Project1 from "../assets/tubenotes.png";
 import Project2 from "../assets/faq.png";
 import Project3 from "../assets/portfolio.png";
-// import Project4 from "../assets/SocialMedia.jpg";
+import Project4 from "../assets/servicepulse.png";
 import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
 import LinkedIn from "../assets/linkedin.png";
@@ -222,8 +222,81 @@ const PROJECTS = [
         link: "https://github.com/theravikumarai/Portfolio",
         demoLink: "https://theravikumarai.vercel.app/"
     },
+    {
+      id: 4,
+      title: "ServicePulse",
+      summary:
+          "An end-to-end AWS data engineering platform that transforms raw enterprise ticket data into high-quality, standardized, ML-ready datasets and operational analytics.",
+
+      problem:
+          "Enterprise ticket data is often raw, inconsistent, incomplete, and difficult to use directly for analytics or machine learning. ServiceIQ automates ingestion, transformation, validation, and warehousing to produce reliable, standardized, ML-ready ticket data.",
+
+      features: [
+          "ServiceNow API Ingestion",
+          "Serverless Data Pipeline",
+          "Step Functions Orchestration",
+          "S3 Bronze & Silver Layers",
+          "AWS Glue / PySpark ETL",
+          "Redshift Gold Data Warehouse",
+          "Data Quality Validation",
+          "CloudWatch Monitoring",
+          "SNS Notifications",
+          "Interactive Streamlit Dashboard"
+      ],
+
+      techStack: [
+          "Python",
+          "AWS Lambda",
+          "AWS Step Functions",
+          "Amazon EventBridge",
+          "Amazon S3",
+          "AWS Glue",
+          "PySpark",
+          "Amazon Redshift Serverless",
+          "AWS Secrets Manager",
+          "AWS IAM",
+          "Amazon CloudWatch",
+          "Amazon SNS",
+          "Pandas",
+          "Streamlit"
+      ],
+
+      metrics: [
+          "End-to-End Data Pipeline",
+          "Bronze-Silver-Gold Architecture",
+          "Serverless AWS Architecture",
+          "Automated ETL",
+          "Data Quality & Monitoring",
+          "Interactive Operational Analytics"
+      ],
+
+      architecture: [
+          "ServiceNow",
+          "EventBridge",
+          "Step Functions",
+          "AWS Lambda",
+          "Amazon S3",
+          "AWS Glue",
+          "Amazon Redshift",
+          "Streamlit"
+      ],
+
+      outcome:
+          "Built a production-oriented data foundation that converts raw ticket data into validated, analytics-ready and ML-ready datasets using an automated AWS Bronze-Silver-Gold pipeline.",
+
+      image: (
+          <img
+              src={Project4}
+              alt="ServicePulse"
+              className="project_img"
+          />
+      ),
+
+      link: "https://github.com/theravikumarai/Project-ServicePulse",
+      demoLink: "https://servicepulseai.streamlit.app/"
+   },
     // {
-    //     id: 3,
+    //     id: 4,
     //     title: "Nina - IT Assistant",
     //     description: "This project leverages Generative AI and Deep Learning to create videos from text-based inputs. It integrates Natural Language Processing (NLP) and Computer Vision to generate relevant visuals, animations, and voiceovers. Using LLMs, AI-powered video synthesis, and AWS cloud services, the system converts scripts into engaging video content. This solution is ideal for content creators, businesses, and automated storytelling, enabling scalable and high-quality video production with minimal manual effort.",
     //     image: <img src={Project3} alt="AI Video Creator" className="project_img" />,
