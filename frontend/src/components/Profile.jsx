@@ -13,7 +13,7 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/theravikumarai/", label: "LinkedIn", icon: FaLinkedin },
   { href: "https://theravikumarai.medium.com/", label: "Medium", icon: FaMedium },
   { href: "https://www.kaggle.com/theravikumarai", label: "Kaggle", icon: FaKaggle },
-  { href: "https://huggingface.co/theravikumarai", label: "HuggingFace", icon: SiHuggingface },
+  // { href: "https://huggingface.co/theravikumarai", label: "HuggingFace", icon: SiHuggingface },
   { href: "mailto:theravikumarai@gmail.com", label: "Email", icon: FaEnvelope },
 ];
 

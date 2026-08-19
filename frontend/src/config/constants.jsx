@@ -157,19 +157,19 @@ const PROFICIENCIES = {
       ],
     },
 
-    {
-      id: 9,
-      level: "ARCHITECTURE",
-      title: "AI System Design",
-      image: <img src={SoftSkills} alt="AI System Design" className="icon" />,
-      badges: [
-        "AI System Design",
-        "LLM System Design",
-        "Multi-Agent Architectures",
-        "Scalable AI Systems",
-        "Design Patterns",
-      ],
-    },
+    // {
+    //   id: 9,
+    //   level: "ARCHITECTURE",
+    //   title: "AI System Design",
+    //   image: <img src={SoftSkills} alt="AI System Design" className="icon" />,
+    //   badges: [
+    //     "AI System Design",
+    //     "LLM System Design",
+    //     "Multi-Agent Architectures",
+    //     "Scalable AI Systems",
+    //     "Design Patterns",
+    //   ],
+    // },
   ],
 };
 
@@ -262,12 +262,9 @@ const PROJECTS = [
       ],
 
       metrics: [
-          "End-to-End Data Pipeline",
-          "Bronze-Silver-Gold Architecture",
           "Serverless AWS Architecture",
           "Automated ETL",
           "Data Quality & Monitoring",
-          "Interactive Operational Analytics"
       ],
 
       architecture: [
@@ -426,24 +423,24 @@ const OTHER_PLATFORMS = [
         link: "https://www.kaggle.com/theravikumarai",
         image: Kaggle
     },
-    {
-        id: 5,
-        title: "Youtube",
-        // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
-        // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
-        cta: "Explore",
-        link: "https://www.youtube.com/@theravikumarai",
-        image: Youtube
-    },
-    {
-        id: 6,
-        title: "HuggingFace",
-        // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
-        // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
-        cta: "Explore",
-        link: "https://huggingface.co/theravikumarai",
-        image: HuggingFace
-    },
+    // {
+    //     id: 5,
+    //     title: "Youtube",
+    //     // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
+    //     // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
+    //     cta: "Explore",
+    //     link: "https://www.youtube.com/@theravikumarai",
+    //     image: Youtube
+    // },
+    // {
+    //     id: 6,
+    //     title: "HuggingFace",
+    //     // description: "Learn Machine Learning, Deep Learning, NLP, LLMs, and Generative AI through hands-on tutorials and real-world projects.",
+    //     // highlights: ["Hands-on AI", "End to End Projects", "Learning"],
+    //     cta: "Explore",
+    //     link: "https://huggingface.co/theravikumarai",
+    //     image: HuggingFace
+    // },
 ];
 
 const CONTACTINFO=[
